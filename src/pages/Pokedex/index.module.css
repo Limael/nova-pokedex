@@ -1,0 +1,529 @@
+.pokedex_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section_container {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - 93px);
+    background: #FFFFFF;
+    padding-top: 73px;
+}
+
+
+.section_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.pokemon_quantity {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 41px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 3px;
+
+    color: #000000;
+
+}
+
+
+.filter_section {
+    gap: 64px;
+    display: flex;
+    margin-bottom: 52px;
+    align-self: baseline;
+    margin-top: 36px;
+    margin-left: 70px;
+
+}
+
+.input {
+    background: linear-gradient(180deg, #FFFFFF 30.32%, #F5F5F5 100%);
+    background: #F2F2F2;
+    box-shadow: 4px 4px 16px rgba(1, 28, 64, 0.2);
+    border-radius: 40px !important;
+    width: 88%;
+    height: 53px !important;
+    padding-left: 31px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: rgba(33, 33, 33, 0.8);
+    margin-top: 34px;
+}
+
+
+.modal {
+    background: transparent !important;
+    border-radius: 16px;
+    max-width: 800px !important;
+}
+
+
+.modal_image_container_green {
+    width: 364px;
+    background: linear-gradient(0deg, #70A83B 0%, #9EDD6C 100%);
+    border-radius: 16px 0 0 16px;
+    height: 371px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 14px;
+
+}
+
+.modal_image_container_gray {
+    width: 364px;
+    background: linear-gradient(0deg, #6B6B6B 0%, #A1A1A1 100%);
+    border-radius: 16px 0 0 16px;
+    height: 371px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 14px;
+
+}
+
+.modal_image_container_blue {
+    width: 364px;
+    background: linear-gradient(0deg, #21456B 0%, #76AADB 100%);
+
+    border-radius: 16px 0 0 16px;
+    height: 371px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 14px;
+
+}
+
+.modal_image_container_red {
+    width: 364px;
+    background: linear-gradient(270deg, #B33327 0.15%, #D93E30 100%);
+    border-radius: 16px 0 0 16px;
+    height: 371px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 14px;
+
+}
+
+.modal_image_container_light_blue {
+    width: 364px;
+    background: linear-gradient(270deg, #6C99C7 0.15%, #76AADB 100%);
+    border-radius: 16px 0 0 16px;
+    height: 371px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 14px;
+
+}
+
+.modal_image_container_purple {
+    width: 364px;
+    background: linear-gradient(270deg, #9D80B4 0.15%, #A974BC 100%);
+    border-radius: 16px 0 0 16px;
+    height: 371px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 14px;
+
+}
+
+.modal_image_container_brown {
+    width: 364px;
+    background: linear-gradient(270deg, #9B897B 0.15%, #ac9480 100%);
+    border-radius: 16px 0 0 16px;
+    height: 371px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 14px;
+
+}
+
+.modal_image_container_yellow {
+    width: 364px;
+    background: linear-gradient(270deg, #F7C545 0.15%, #F4C157 100%);
+    border-radius: 16px 0 0 16px;
+    height: 371px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 14px;
+
+}
+
+.stats_container {
+    background: #FDFDFD;
+    width: 82px;
+    height: 69px;
+    box-shadow: 4px 4px 24px rgba(1, 17, 38, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.black_circle {
+    border: 3px solid #212121;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 36px;
+    border-radius: 100px;
+}
+
+.black_circle span {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #212121;
+}
+
+.stats_cards_container {
+    display: flex;
+    gap: 23px;
+}
+
+.modal_container {
+    display: flex;
+    align-items: center;
+    border-radius: 16px !important;
+}
+
+.types_container {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.modal_information_container {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.modal_image {
+    width: 341px;
+}
+
+.modal_body_green {
+    background: linear-gradient(180deg, #3E652F 42.19%, #70A83B 100%);
+    border-radius: 16px;
+}
+
+.modal_body_container_gray {
+    background: linear-gradient(180deg, #6B6B6B 42.19%, #A1A1A1 100%);
+    border-radius: 16px;
+}
+
+.modal_body_container_blue {
+    background: linear-gradient(180deg, #21456B 42.19%, #76AADB 100%);
+    border-radius: 16px;
+}
+
+.modal_body_container_red {
+    background: linear-gradient(180deg, #6B1E18 42.19%, #F76545 100%);
+    border-radius: 16px;
+}
+
+.modal_body_container_light_blue {
+    background: linear-gradient(180deg, #76AADB 42.19%, #5088B8 100%);
+    border-radius: 16px;
+}
+
+.modal_body_container_purple {
+    background: linear-gradient(180deg, #A974BC 42.19%, #9C6BAF 100%);
+    border-radius: 16px;
+}
+
+.modal_body_container_brown {
+    background: linear-gradient(180deg, #9B897B 42.19%, #8C786D 100%);
+    border-radius: 16px;
+}
+
+.modal_body_container_yellow {
+    background: linear-gradient(180deg, #F7C545 42.19%, #E7B438 100%);
+    border-radius: 16px;
+}
+
+.information_header {
+    display: flex;
+    gap: 56px;
+}
+
+.generation_container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.progress_bar {
+    width: 137px;
+    height: 6px !important;
+    border-radius: 8px;
+
+}
+
+.container_abilities {
+    background: #FDFDFD;
+    box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+    border-radius: 8px;
+    width: 264px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 28px;
+
+}
+
+.container_abilities span {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: start;
+    color: #000000;
+    width: 222px;
+}
+
+.base_stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.base_stats span {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: start;
+    width: 107px;
+
+
+    color: #000000;
+}
+
+.container_base_stats {
+    background: #FDFDFD;
+    /* blur card */
+
+    box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+    border-radius: 8px;
+    width: 400px;
+    height: 77px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 16px;
+
+    padding-right: 16px;
+}
+
+
+.modal_close {
+    position: absolute !important;
+    top: -40px !important;
+    right: 0 !important;
+    font-size: 24px !important;
+}
+
+.generation {
+
+    width: 129px;
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+
+    color: #FDFDFD;
+}
+
+.index_container {
+    background: #F2CB07;
+    width: 41px;
+    height: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+}
+
+.index_container span {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+}
+
+.modal_header {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    text-transform: capitalize;
+    /* identical to box height */
+
+
+    /* White-light */
+
+    color: #FDFDFD;
+
+    /* blur card */
+
+    text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1007px) {
+    .modal {
+
+        max-width: 80% !important;
+    }
+
+}
+
+
+
+
+@media only screen and (max-width: 767px) {
+    .modal {
+
+        max-width: 100% !important;
+    }
+
+    .modal_container {
+        flex-direction: column;
+    }
+
+    .modal_image_container_green {
+        width: 100%;
+        border-radius: 16px;
+
+
+    }
+
+    .modal_image_container_gray {
+        width: 100%;
+
+
+    }
+
+    .modal_image_container_red {
+        width: 100%;
+        border-radius: 16px;
+
+    }
+
+    .modal_image_container_light_blue {
+        width: 100%;
+        border-radius: 16px;
+
+    }
+
+    .modal_image_container_purple {
+        width: 100%;
+        border-radius: 16px;
+
+    }
+
+    .modal_image_container_brown {
+        width: 100%;
+        border-radius: 16px;
+
+    }
+
+    .modal_image_container_yellow {
+        width: 100%;
+        border-radius: 16px;
+
+    }
+
+    .container_abilities {
+        width: 400px;
+        height: 100px;
+    }
+
+    .abilities_title {
+        font-family: 'Karla' !important;
+        font-style: normal;
+        font-weight: 400 !important;
+        font-size: 31px !important;
+        line-height: 36px !important;
+
+
+        color: #000000;
+
+    }
+
+    .modal_image {
+        width: 316px;
+    }
+
+    .modal_image_container_green {
+        align-items: center;
+    }
+
+    .types_container {
+        align-self: flex-end;
+    }
+
+    .modal_close {
+        position: absolute !important;
+        top: 6px !important;
+        left: 6px !important;
+        font-size: 24px !important;
+    }
+
+    .container_base_stats {
+        height: auto;
+        flex-direction: column;
+        padding-left: 36px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        align-items: flex-start;
+    }
+
+    .modal_information_container {
+        padding-bottom: 13px;
+    }
+}

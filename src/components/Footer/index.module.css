@@ -1,0 +1,87 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    width: 86%;
+}
+
+.section_container {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #212121;
+
+}
+
+.text_footer {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #212121;
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1007px) {
+    .text_footer {
+        font-family: 'Karla';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+
+        /* Pharagraph */
+
+        color: #212121;
+
+    }
+
+    .section_container {
+        width: 90%;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .section_container {
+        flex-direction: column-reverse !important;
+        gap: 8px;
+    }
+
+    .text {
+        font-size: 18px;
+        line-height: 21px;
+
+    }
+
+    .section_container {
+        width: 100%;
+    }
+
+    .text_footer {
+        font-family: 'Karla';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+
+
+        color: #212121;
+
+    }
+}

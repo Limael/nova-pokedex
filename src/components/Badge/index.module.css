@@ -1,0 +1,98 @@
+.badge_container_green {
+    box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
+    border-radius: 11px;
+    width: 60px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #70A83B;
+}
+
+.badge_container_gray {
+    box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
+    border-radius: 11px;
+    width: 60px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #A1A1A1;
+}
+
+.badge_container_blue {
+    box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
+    border-radius: 11px;
+    width: 60px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #76AADB;
+}
+
+.badge_container_red {
+    box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
+    border-radius: 11px;
+    width: 60px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F76545;
+}
+
+.badge_container_light_blue {
+    box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
+    border-radius: 11px;
+    width: 60px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #76AADB;
+}
+
+.badge_container_purple {
+    box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
+    border-radius: 11px;
+    width: 60px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #A974BC;
+}
+
+.badge_container_brown {
+    box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
+    border-radius: 11px;
+    width: 60px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #9B897B;
+}
+
+.badge_container_yellow {
+    box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
+    border-radius: 11px;
+    width: 60px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F7C545;
+}
+
+.badge_text {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    color: #212121;
+    text-transform: capitalize;
+
+}

@@ -1,0 +1,41 @@
+ @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&display=swap');
+ @import '../node_modules/source-sans-pro/source-sans-pro.css';
+
+ :root {
+   font-family: Karla;
+   --bug-color: #A8B820;
+   --dark-color: #705848;
+   --dragon-color: #7038F8;
+   --electric-color: #F8D030;
+   --fairy-color: #EE99AC;
+   --fighting-color: #C03028;
+   --fire-color: #F08030;
+   --flying-color: #A890F0;
+   --ghost-color: #705898;
+   --normal-color: #A8A878;
+   --grass-color: #78C850;
+   --ground-color: #E0C068;
+   --ice-color: #98D8D8;
+   --poison-color: #A040A0;
+   --psychic-color: #F85888;
+   --rock-color: #B8A038;
+   --steel-color: #B8B8D0;
+   --water-color: #6890F0;
+
+   --yellow: #F5DB13;
+
+   --yellow-gradient: linear-gradient(180deg, #F5DB13 0%, #F2B807 100%);
+
+   --danger: #E25858;
+   --grey-gradient: linear-gradient(180deg, #FFF 30.32%, #F5F5F5 100%);
+   --dark-gray: #212121;
+
+
+ }
+
+ body {
+   padding: 0;
+   margin: 0;
+   border: 0;
+
+ }
