@@ -1,20 +1,25 @@
-import { VStack, Input, Menu, MenuButton, Button, MenuList, MenuItem, Checkbox, SimpleGrid, Box, Stack, Text } from '@chakra-ui/react';
-import { ChevronDownIcon } from '@chakra-ui/icons';
-import api from '../../api/api';
 import { useEffect, useState } from 'react';
-import { PokemonType } from '../../dto/dto';
-import styles from './index.module.css';
+import {
+    VStack, Input, Menu, MenuButton, Button, MenuList, MenuItem, Checkbox,
+    SimpleGrid, Box, Stack, Text
+} from '@chakra-ui/react';
+import { ChevronDownIcon } from '@chakra-ui/icons';
 import axios from 'axios';
+import { Pokemon, PokemonType } from '../../dto/dto';
+import { usePokemonContext } from '../../Context/usePokemonContext';
+import styles from './index.module.css';
 
 export const Pokedex = () => {
     const [types, setTypes] = useState<PokemonType[]>([]);
     const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
-    const [pokemons, setPokemons] = useState<PokemonType[]>([]);
+    const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+    const { pokemons: defaultPokemons } = usePokemonContext();
+    const [visibleCount, setVisibleCount] = useState(9);
 
     useEffect(() => {
         const fetchTypes = async () => {
             try {
-                const response = await api.get('/type');
+                const response = await axios.get('https://pokeapi.co/api/v2/type');
                 setTypes(response.data.results);
             } catch (error) {
                 console.error("Erro ao buscar dados da PokeAPI", error);
@@ -26,24 +31,28 @@ export const Pokedex = () => {
 
     useEffect(() => {
         const fetchPokemonsByType = async () => {
-            try {
-                // Supondo que a API retorne os Pokémons quando um tipo é passado
-                const responses = await Promise.all(
-                    selectedTypes.map(type => axios.get(`https://pokeapi.co/api/v2/type/${type}`))
-                );
+            if (selectedTypes.length > 0) {
+                try {
+                    const responses = await Promise.all(
+                        selectedTypes.map(typeName =>
+                            axios.get(`https://pokeapi.co/api/v2/type/${typeName}`)
+                        )
+                    );
 
-                const newPokemons = responses.flatMap(response => response.data.pokemon);
-                setPokemons(newPokemons);
-            } catch (error) {
-                console.error("Erro ao buscar Pokémons", error);
+                    const newPokemons = responses.flatMap(response =>
+                        response.data.pokemon.map((poke: { pokemon: string; }) => poke.pokemon)
+                    );
+                    setPokemons(newPokemons);
+                } catch (error) {
+                    console.error("Erro ao buscar Pokémons", error);
+                }
+            } else {
+                setPokemons([]);
+                setVisibleCount(9)
             }
         };
 
-        if (selectedTypes.length > 0) {
-            fetchPokemonsByType();
-        } else {
-            setPokemons([]);
-        }
+        fetchPokemonsByType();
     }, [selectedTypes]);
 
     const handleTypeChange = (typeName: string) => {
@@ -55,6 +64,14 @@ export const Pokedex = () => {
             }
         });
     };
+
+    const loadMorePokemons = () => {
+        setVisibleCount(current => current + 9);
+    };
+
+    const displayedPokemons = selectedTypes.length > 0
+        ? pokemons.slice(0, visibleCount)
+        : defaultPokemons.slice(0, visibleCount);
 
     return (
         <>
@@ -76,6 +93,7 @@ export const Pokedex = () => {
                                     <MenuItem key={typeItem.name}>
                                         <Checkbox
                                             w={'100%'}
+                                            textTransform={'capitalize'}
                                             isChecked={selectedTypes.includes(typeItem.name)}
                                             onChange={() => handleTypeChange(typeItem.name)}
                                         >
@@ -88,12 +106,15 @@ export const Pokedex = () => {
                     </Stack>
 
                     <SimpleGrid columns={[1, null, 2, 3]} spacing={[0, null, '34px']}>
-                        {pokemons.map(pokemon => (
+                        {displayedPokemons.map(pokemon => (
                             <Box key={pokemon.name}>
                                 {pokemon.name}
                             </Box>
                         ))}
                     </SimpleGrid>
+                    {displayedPokemons.length < (selectedTypes.length > 0 ? pokemons.length : defaultPokemons.length) && (
+                        <Button my={12} onClick={loadMorePokemons}>Carregar Mais</Button>
+                    )}
                 </Box>
             </VStack>
         </>

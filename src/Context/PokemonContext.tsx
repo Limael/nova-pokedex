@@ -16,11 +16,13 @@ export const PokemonContext = createContext<PokemonContextData>({
     loading: true,
 });
 
+
+
 interface PokemonProviderProps {
     children: ReactNode;
 }
 
-const PokemonProvider = ({ children }: PokemonProviderProps) => {
+export const PokemonProvider = ({ children }: PokemonProviderProps) => {
     const [pokemons, setPokemons] = useState<Pokemon[]>([]);
     const [legendaryPokemons, setLegendaryPokemons] = useState<Pokemon[]>([]);
     const [loading, setLoading] = useState(true);
@@ -29,7 +31,7 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
 
         const fetchPokemons = async () => {
             try {
-                const response = await api.get('/pokemon?limit=150');
+                const response = await api.get('/pokemon?limit=100000&offset=0');
                 setPokemons(response.data.results);
                 setLoading(false);
 
@@ -39,6 +41,12 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
             }
         };
 
+
+        fetchPokemons();
+
+    }, []);
+
+    useEffect(() => {
         const fetchLegendaries = async () => {
             try {
                 const response = await api.get('/egg-group/15');
@@ -51,9 +59,9 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
             }
         }
 
-        fetchPokemons();
         fetchLegendaries();
     }, []);
+
 
     return (
         <PokemonContext.Provider value={{ pokemons, loading, legendaryPokemons }}>
@@ -63,3 +71,6 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
 };
 
 export default PokemonProvider;
+
+
+
